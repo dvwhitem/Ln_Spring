@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="destructiveBean" class="com.home.ln_spring.ch5.lifecycle.DestructiveBean">
+        <property name="filePath">
+            <value>/home/vitaliy/Spring/links</value>
+        </property>
+    </bean>
+    
+    <bean id="shutdownHook" class="com.home.ln_spring.ch5.interaction.ShutdownHookBean"/>
+</beans>
