@@ -137,6 +137,7 @@
             <version>1.4</version>
         </dependency>
         <dependency>
+<<<<<<< HEAD
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>3.6.10.Final</version>
@@ -147,6 +148,8 @@
             <version>20030911</version>
         </dependency>
         <dependency>
+=======
+>>>>>>> 7db672b7353ac837083836d62a51bcb609dc147a
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>6.0</version>
