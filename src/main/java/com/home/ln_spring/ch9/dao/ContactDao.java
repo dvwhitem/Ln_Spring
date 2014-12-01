@@ -6,7 +6,7 @@
 
 package com.home.ln_spring.ch9.dao;
 
-import com.home.ln_spring.ch9.domain.Contact;
+import com.home.ln_spring.ch9.domain.TestContact;
 import java.util.List;
 
 /**
@@ -15,13 +15,13 @@ import java.util.List;
  */
 public interface ContactDao {
 
-    public List<Contact> findAll();
+    public List<TestContact> findAll();
     
-    public List<Contact> findAllWithDetail();
+    public List<TestContact> findAllWithDetail();
     
-    public Contact findById(int id);
+    public TestContact findById(int id);
     
-    public Contact save(Contact contact);
+    public TestContact save(TestContact contact);
     
-    public void delete(Contact contact);
+    public void delete(TestContact contact);
 }

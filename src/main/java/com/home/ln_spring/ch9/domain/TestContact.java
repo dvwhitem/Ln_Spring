@@ -31,7 +31,7 @@ import javax.persistence.Version;
  * @author vitaliy
  */
 @Entity
-@Table(name = "contact")
+@Table(name = "testcontact")
 @NamedQueries({
     @NamedQuery(name = "Contact.findById",
             query = "select distinct c from Contact c "
@@ -40,45 +40,45 @@ import javax.persistence.Version;
     @NamedQuery(name = "Contact.findAllWithDetail",
             query = "select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
 })
-public class Contact implements Serializable {
+public class TestContact implements Serializable {
 
     private int id;
     private int version;
     private String firstName;
     private String lastName;
     private Date birthDate;
-    private Set<ContactTelDetail> contactTelDetails
-            = new HashSet<ContactTelDetail>();
-    private Set<Hobby> hobbies = new HashSet<Hobby>();
+    private Set<TestContactTelDetail> contactTelDetails
+            = new HashSet<TestContactTelDetail>();
+    private Set<TestHobby> hobbies = new HashSet<TestHobby>();
 
     @ManyToMany
     @JoinTable(name = "contact_hobby_detail",
             joinColumns = @JoinColumn(name = "CONTACT_ID"),
             inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
-    public Set<Hobby> getHobbies() {
+    public Set<TestHobby> getHobbies() {
         return this.hobbies;
     }
 
-    public void setHobbies(Set<Hobby> hobbies) {
+    public void setHobbies(Set<TestHobby> hobbies) {
         this.hobbies = hobbies;
     }
 
     @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL,
             orphanRemoval = true)
-    public Set<ContactTelDetail> getContactTelDetails() {
+    public Set<TestContactTelDetail> getContactTelDetails() {
         return contactTelDetails;
     }
 
-    public void setContactTelDetails(Set<ContactTelDetail> contactTelDetails) {
+    public void setContactTelDetails(Set<TestContactTelDetail> contactTelDetails) {
         this.contactTelDetails = contactTelDetails;
     }
 
-    public void addContactTelDetail(ContactTelDetail contactTelDetail) {
+    public void addContactTelDetail(TestContactTelDetail contactTelDetail) {
         contactTelDetail.setContact(this);
         getContactTelDetails().add(contactTelDetail);
     }
 
-    public void removeContactTelDetail(ContactTelDetail contactTelDetail) {
+    public void removeContactTelDetail(TestContactTelDetail contactTelDetail) {
         getContactTelDetails().remove(contactTelDetail);
     }
 

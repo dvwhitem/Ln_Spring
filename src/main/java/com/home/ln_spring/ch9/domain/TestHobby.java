@@ -22,20 +22,20 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "hobby")
-public class Hobby implements Serializable {
+public class TestHobby implements Serializable {
 
     private String hobbyId;
-    private Set<Contact> contacts = new HashSet<Contact>();
+    private Set<TestContact> contacts = new HashSet<TestContact>();
 
     @ManyToMany
     @JoinTable(name = "contact_hobby_detail",
             joinColumns = @JoinColumn(name = "hobby_id"),
             inverseJoinColumns = @JoinColumn(name = "contact_id"))
-    public Set<Contact> getContacts() {
+    public Set<TestContact> getContacts() {
         return contacts;
     }
 
-    public void setContacts(Set<Contact> contacts) {
+    public void setContacts(Set<TestContact> contacts) {
         this.contacts = contacts;
     }
 

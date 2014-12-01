@@ -22,30 +22,30 @@ import javax.persistence.Version;
  */
 @Entity
 @Table(name = "contact_tel_detail")
-public class ContactTelDetail implements Serializable {
+public class TestContactTelDetail implements Serializable {
 
     private int id;
     private int version;
     private String telType;
     private String telNumber;
-    private Contact contact;
+    private TestContact contact;
 
-    public ContactTelDetail() {
+    public TestContactTelDetail() {
 
     }
 
-    public ContactTelDetail(String telType, String telNumber) {
+    public TestContactTelDetail(String telType, String telNumber) {
         this.telType = telType;
         this.telNumber = telNumber;
     }
 
     @ManyToOne
     @JoinColumn(name = "contact_id")
-    public Contact getContact() {
+    public TestContact getContact() {
         return contact;
     }
 
-    public void setContact(Contact contact) {
+    public void setContact(TestContact contact) {
         this.contact = contact;
     }
 

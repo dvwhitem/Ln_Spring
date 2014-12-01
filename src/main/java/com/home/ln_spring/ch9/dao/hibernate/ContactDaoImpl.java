@@ -6,7 +6,7 @@
 package com.home.ln_spring.ch9.dao.hibernate;
 
 import com.home.ln_spring.ch9.dao.ContactDao;
-import com.home.ln_spring.ch9.domain.Contact;
+import com.home.ln_spring.ch9.domain.TestContact;
 import java.util.List;
 import javax.annotation.Resource;
 import org.apache.commons.logging.Log;
@@ -38,32 +38,32 @@ public class ContactDaoImpl implements ContactDao {
 
     @Override
     @Transactional(readOnly = true)
-    public List<Contact> findAll() {
+    public List<TestContact> findAll() {
         return sessionFactory.getCurrentSession().
                 createQuery("from Contact c").list();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<Contact> findAllWithDetail() {
+    public List<TestContact> findAllWithDetail() {
         return sessionFactory.getCurrentSession()
                 .getNamedQuery("Contact.findAllWithDetail").list();
     }
 
-    public Contact findById(int id) {
-        return (Contact) sessionFactory.getCurrentSession().
+    public TestContact findById(int id) {
+        return (TestContact) sessionFactory.getCurrentSession().
                 getNamedQuery("Contact.findById").setParameter("id", id).uniqueResult();
     }
 
     @Override
-    public Contact save(Contact contact) {
+    public TestContact save(TestContact contact) {
         sessionFactory.getCurrentSession().saveOrUpdate(contact);
         log.info("Contact saved with id: " + contact.getId());
         return contact;
     }
 
     @Override
-    public void delete(Contact contact) {
+    public void delete(TestContact contact) {
         sessionFactory.getCurrentSession().delete(contact);
         log.info("Contact deleted with id: " + contact.getId());
     }

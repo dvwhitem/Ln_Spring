@@ -6,10 +6,10 @@
 
 package com.home.ln_spring.ch9.sample;
 
-import com.home.ln_spring.ch9.domain.ContactTelDetail;
+import com.home.ln_spring.ch9.domain.TestContactTelDetail;
 import com.home.ln_spring.ch9.dao.ContactDao;
-import com.home.ln_spring.ch9.domain.Contact;
-import com.home.ln_spring.ch9.domain.Hobby;
+import com.home.ln_spring.ch9.domain.TestContact;
+import com.home.ln_spring.ch9.domain.TestHobby;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -140,28 +140,28 @@ public class SpringHibernateSample {
         
     }
     
-    private static void listContacts(List<Contact> contacts) {
+    private static void listContacts(List<TestContact> contacts) {
         
         System.out.println("");
         System.out.println("Listing contacts without details : ");
-        for(Contact contact: contacts) {
+        for(TestContact contact: contacts) {
             System.out.println(contact);
             System.out.println();
         }
     }
     
-    private static void listContactsWithDetail(List<Contact> contacts) {
+    private static void listContactsWithDetail(List<TestContact> contacts) {
         System.out.println("");
         System.out.println("Listing contacts with details:");
-        for (Contact contact : contacts) {
+        for (TestContact contact : contacts) {
             System.out.println(contact);
             if (contact.getContactTelDetails() != null) {
-                for (ContactTelDetail contactTelDetail : contact.getContactTelDetails()) {
+                for (TestContactTelDetail contactTelDetail : contact.getContactTelDetails()) {
                     System.out.println(contactTelDetail);
                 }
             }
             if (contact.getHobbies() != null) {
-                for (Hobby hobby : contact.getHobbies()) {
+                for (TestHobby hobby : contact.getHobbies()) {
                     System.out.println(hobby);
                 }
             }
