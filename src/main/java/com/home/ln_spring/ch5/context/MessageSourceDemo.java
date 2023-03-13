@@ -29,6 +29,6 @@ public class MessageSourceDemo {
         System.out.println(context.getMessage("msg", null ,czech));
         
         System.out.println(context.getMessage(
-                "nameMsg", new Object[] {"Dynisyuk", "Vitaliy", "Vladimirovich"}, english));
+                "nameMsg", new Object[] {"John", "Jerry", "James"}, english));
     }
 }
